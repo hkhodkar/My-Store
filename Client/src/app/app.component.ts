@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.httpService
-      .get('https://localhost:5001/api/products?pageSize=50')
+      .get<IPagination>('https://localhost:5001/api/products?pageSize=50')
       .subscribe({
-        next: (res:any) => this.products = res.data,
-        error: err => console.log(err)
-     });
+        next: (res: IPagination) => (this.products = res.data),
+        error: (err) => console.log(err),
+      });
   }
 }
