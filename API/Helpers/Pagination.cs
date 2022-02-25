@@ -12,12 +12,12 @@ namespace API.Helpers
             PageIndex = pageIndex;
             PageSize = pageSize;
             Count = count;
-            Date = date;
+            Data = date;
         }
 
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
         public int Count { get; set; }
-        public IEnumerable<T> Date { get; set; }
+        public IEnumerable<T> Data { get; set; }
     }
 }
