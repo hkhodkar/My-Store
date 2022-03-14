@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { IPagination } from './models/pagination.model';
-import { IProduct } from './models/product.model';
+import { IPagination } from './shared/models/pagination.model';
+import { IProduct } from './shared/models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +13,7 @@ export class AppComponent implements OnInit {
 
   products: IProduct[] = [];
 
-  constructor(private httpService: HttpClient) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.httpService
-      .get<IPagination>('https://localhost:5001/api/products?pageSize=50')
-      .subscribe({
-        next: (res: IPagination) => (this.products = res.data),
-        error: (err) => console.log(err),
-      });
-  }
+  ngOnInit() {}
 }
