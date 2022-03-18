@@ -1,7 +1,7 @@
 .max-height {
   max-height: 70px;
 }
-.font-larger{
+.font-larger {
   font-size: larger;
 }
 
@@ -16,4 +16,12 @@
   top: -12px;
   right: 32px;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #343a40;
+  &.active {
+    color: orange;
+  }
 }
