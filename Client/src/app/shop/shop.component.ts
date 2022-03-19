@@ -12,7 +12,7 @@ import { ShopService } from './shop.service';
 })
 export class ShopComponent implements OnInit {
   constructor(private shopService: ShopService) {}
-  @ViewChild('search', { static: true }) searchTerm!: ElementRef;
+  @ViewChild('search', { static: false }) searchTerm!: ElementRef;
   products: IProduct[] = [];
   brands: IProductBrandsModel[] = [];
   types: IProductTypeModel[] = [];
@@ -74,11 +74,10 @@ export class ShopComponent implements OnInit {
   }
 
   onPageChanged(event: any) {
-    if(this.shopParams.pageNumber !== event){
+    if (this.shopParams.pageNumber !== event) {
       this.shopParams.pageNumber = event;
       this.getProducts();
     }
-
   }
 
   onSearch() {
