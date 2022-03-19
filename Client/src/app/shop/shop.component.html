@@ -1,8 +1,8 @@
-<div class="container mt-5">
+<div class="container mt-3">
   <div class="row">
     <section class="col-3">
       <ng-container *ngIf="types && brands">
-        <h5 class="text-warning ml-3">Sorts</h5>
+        <h5 class="text-warning ml-3 mt-4 mb-3">Sorts</h5>
         <select class="custom-select mb-3" (change)="onSortSelected($event)">
           <option *ngFor="let item of sortOptions" [value]="item.value">
             {{ item.name }}
@@ -30,7 +30,7 @@
         <app-pagin-header [totalCounts]="totalCount" [pageSize]="this.shopParams.pageSize"
           [pageNumber]="this.shopParams.pageNumber">
         </app-pagin-header>
-        <div class="form-inline mt-2" *ngIf="products">
+        <div class="form-inline" *ngIf="products">
           <input (keyup.enter)="onSearch()" #search class="form-control mr-2" type="text" step="width:300px"
             placeholder="Search" />
           <button (click)="onSearch()" class="btn btn-outline-primary my-2">
